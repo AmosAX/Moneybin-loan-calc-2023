@@ -9,6 +9,6 @@ localhost:8080/WebPage to view and do new calculations
 
 
 NOTE:
-There is a working web interface but no docker file
+There is a working web interface but no working docker file
 
 
