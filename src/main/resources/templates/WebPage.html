@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<html xmlns:th="https://www.thymeleaf.org" lang="eng">
+<html>
+<body>
+
+<h1>Welcome to the loan calculator</h1>
+
+<h1>loan calculations</h1>
+<h2>Results:</h2>
+</tr>
+<tr th:each="customer : ${customer}">
+    <td><p>name:<span th:text="${customer.getName}"> Name: </span> </p> </td>
+    <td><p> Loan Amount</p>  <span th:text="${customer.getLoan}"> Loan Amount: </span></td>
+    <td><p>Interest rate </p><span th:text="${customer.getInterest}"> Loan Amount: </span></td>
+    <td> <p> Amount of years </p><span th:text="${customer.getYears}"> Loan Amount: </span></td>
+    <td><p> Monthly payments</p> <span th:text="${customer.getMonthlyPayment}"> Loan Amount: </pspan></td>
+    <br>
+</tr>
+
+
+<h2>Make a new calculation?</h2>
+<form action="#" th:action="@{/WebPage}" th:object="${customer}" method="post">
+    <p>name:<input type="text" field="*{name}" name="name"></p>
+    <p>loan:<input type="text" field="*{loan}" name="loan"></p>
+    <p>interest:<input type="text" field="*{interest}" name="interest"></p>
+    <p>years:<input type="text" field="*{years}" name="name"></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+
+</body>
+</html>
